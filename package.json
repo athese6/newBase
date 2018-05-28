@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./server/www.js",
-    "client": "cd client && yarn start",
-    "client-production": "cd client && yarn build && cd ..",
-    "server": "nodemon ./server/www.js",
-    "server-production": "node ./server/server.js",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
-    "production": "concurrently --kill-others-on-fail \"yarn client-production\" \"yarn server-production\" "
+    "client-dev": "cd client && yarn start",
+    "client-build": "cd client && yarn build",
+    "client-start-production": "cd client && yarn start-production",
+    "server-dev": "nodemon ./server/www.js",
+    "server-production": "node ./server/www.js",
+    "start-dev": "concurrently --kill-others-on-fail \"yarn server-dev\" \"yarn client-dev\"",
+    "build-production": "concurrently --kill-others-on-fail \"yarn client-build\"",
+    "start-production": "concurrently --kill-others-on-fail \"yarn server-production\" \"yarn client-start-production\""
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
