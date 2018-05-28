@@ -1,0 +1,25 @@
+{
+  "name": "xoxo-backend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./server/www.js",
+    "client": "cd client && yarn start",
+    "client-production": "cd client && yarn build && cd ..",
+    "server": "nodemon ./server/www.js",
+    "server-production": "node ./server/server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "production": "concurrently --kill-others-on-fail \"yarn client-production\" \"yarn server-production\" "
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0"
+  }
+}
