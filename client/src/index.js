@@ -20,7 +20,8 @@ const AppBundle = (
 
 window.onload = () => {
     Loadable.preloadReady().then(() => {
-        ReactDOM.hydrate(
+        // ReactDOM.hydrate(  this is for ssr
+        ReactDOM.render(
             AppBundle,
             document.getElementById('root')
         );
