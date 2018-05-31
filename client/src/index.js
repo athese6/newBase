@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Loadable from 'react-loadable';
+// import Loadable from 'react-loadable';
 import {Provider as ReduxProvider} from 'react-redux'
 
 import 'materialize-css/dist/js/materialize.min.js'
@@ -18,14 +18,18 @@ const AppBundle = (
     </ReduxProvider>
 );
 
-window.onload = () => {
-    Loadable.preloadReady().then(() => {
-        // ReactDOM.hydrate(  this is for ssr
-        ReactDOM.render(
-            AppBundle,
-            document.getElementById('root')
-        );
-    });
-};
+// window.onload = () => {
+//     Loadable.preloadReady().then(() => {
+//         // ReactDOM.hydrate(  this is for ssr
+//         ReactDOM.render(
+//             AppBundle,
+//             document.getElementById('root')
+//         );
+//     });
+// };
+
+const root = document.querySelector('#root');
+ReactDOM.render(AppBundle, root);
+
 
 // registerServiceWorker();

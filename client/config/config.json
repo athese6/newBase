@@ -1,10 +1,67 @@
 {
-  "babel": {
-    "presets": [
-      "stage-1"
-    ],
-    "plugins": [
-      "transform-decorators-legacy"
+  "app": {
+    "id": "com.gmail.henry82xoxo",
+    "contextName": "http://localhost",
+    "port": 8000,
+    "views": "./views",
+    "view engine": "ejs",
+    "public": "public"
+  },
+  "ssl": {
+    "enable": false,
+    "port": 8443,
+    "passphrase": "tmvkdlzk7082",
+    "key": "ssl/_wildcard_.hapoom.co_2018051893P7.key.pem",
+    "cert": "ssl/_wildcard_.hapoom.co_2018051893P7.crt.pem",
+    "ca": [
+      "ssl/RootChain/COMODORSAAddTrustCA.crt",
+      "ssl/RootChain/COMODORSADomainValidationSecureServerCA.crt"
     ]
+  },
+  "session": {
+    "secret": "xoxo app user auth 4642164",
+    "resave": false,
+    "rolling": true,
+    "saveUninitialized": false,
+    "name": "connect.xoxo",
+    "cookie": {
+      "httpOnly": false,
+      "secure": false,
+      "maxAge": 30000,
+      "rememberMe": 31540000000
+    }
+  },
+  "webpack": {
+    "watch": true,
+    "hotReload": false,
+    "clearOutput": true,
+    "splitVendor": true,
+    "ignore": [
+      "electron"
+    ],
+    "babel": {
+      "presets": [
+        "stage-1"
+      ],
+      "plugins": [
+        "transform-decorators-legacy"
+      ]
+    },
+    "babelExpress": {
+      "ignore": [
+        "/(node_modules)/"
+      ],
+      "presets": [
+        "es2015",
+        "stage-1",
+        "react-app"
+      ],
+      "plugins": [
+        "transform-decorators-legacy",
+        "syntax-dynamic-import",
+        "dynamic-import-node",
+        "react-loadable/babel"
+      ]
+    }
   }
 }

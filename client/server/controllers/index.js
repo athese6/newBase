@@ -1,4 +1,4 @@
-import express from "express";
+const express = require("express");
 
 import serverRenderer from '../middleware/renderer';
 import configureStore from '../../src/store/configureStore';
@@ -27,4 +27,5 @@ router.use(express.static(
     {maxAge: '30d'},
 ));
 
-export default router;
+// export default router;
+module.export = router;

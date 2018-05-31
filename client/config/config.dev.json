@@ -1,5 +1,10 @@
 {
-  "babel": {
-    "cacheDirectory": true
+  "webpack": {
+    "babel": {
+      "cacheDirectory": true
+    },
+    "extractCss": {
+      "sourceMap": true
+    }
   }
 }

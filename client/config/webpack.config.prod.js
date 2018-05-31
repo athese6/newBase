@@ -13,7 +13,7 @@ const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
 const jso = require('json-override');
-const config = jso(require('./config.json'), require('./config.prod.json'));
+const config = require('./config.js');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -154,7 +154,7 @@ module.exports = {
                         test: /\.(js|jsx|mjs)$/,
                         include: paths.appSrc,
                         loader: require.resolve('babel-loader'),
-                        options: config.babel,
+                        options: config.webpack.babel,
                     },
                     // The notation here is somewhat confusing.
                     // "postcss" loader applies autoprefixer to our CSS.

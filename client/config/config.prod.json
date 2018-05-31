@@ -1,5 +1,7 @@
 {
-  "babel": {
-    "compact": true
+  "webpack": {
+    "babel": {
+      "compact": true
+    }
   }
 }
